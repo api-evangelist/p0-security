@@ -1,0 +1,82 @@
+openapi: 3.0.4
+info:
+  title: P0 Just-in-Time Access Command API
+  version: 1.0.0
+  description: P0 Security's Just-In-Time (JIT) access API surface, consolidated from P0's published Command API and Permission Request API. These endpoints let external systems, bots, CI/CD pipelines, and security workflows programmatically submit access commands and approve, deny, or revoke permission requests within a P0 organization. All endpoints are protected with bearer (JWT) tokens.
+  contact:
+    name: P0 Security
+    url: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+  x-apisjson-source: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api (Command API + Access Requests API, embedded OpenAPI blocks harvested verbatim)
+servers:
+- url: https://api.p0.app
+security:
+- bearerAuth: []
+tags:
+- name: Command
+  description: Submit commands that trigger access workflows.
+paths:
+  /o/{orgId}/command:
+    post:
+      tags:
+      - Command
+      summary: Submit a command to P0
+      operationId: submitCommand
+      description: 'Submits a command to P0. This endpoint allows automation of access requests or other operations.
+
+        '
+      parameters:
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Organization identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - argv
+              - scriptName
+              properties:
+                argv:
+                  type: array
+                  items:
+                    type: string
+                  description: Command-line arguments
+                scriptName:
+                  type: string
+                  description: The script or command name to execute
+      responses:
+        '200':
+          description: Command accepted and processed
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - ok
+                properties:
+                  ok:
+                    type: boolean
+                  message:
+                    type: string
+                  id:
+                    type: string
+                    description: Request ID
+                  isPreexisting:
+                    type: boolean
+                  isPersistent:
+                    type: boolean
+        '400':
+          description: Bad request – malformed payload
+        '401':
+          description: Unauthorized – missing or invalid token
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
