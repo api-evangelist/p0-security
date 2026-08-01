@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+probe: false
+url: https://p0.dev/trust-center/
+certifications:
+- SOC 2 Type II
+compliance_detail:
+  soc2:
+    type: Type II
+    auditor: Advantage Partners
+    statement: >-
+      P0 Security maintains SOC 2 Type II compliance, with independent audits by
+      Advantage Partners to validate the effectiveness of our security controls.
+    report_access: >-
+      Available to customers and qualified prospects under NDA on request via a
+      P0 representative.
+security_program:
+  encryption: Cloud-native KMS with automatic key rotation per operational policy.
+  testing:
+  - Annual third-party penetration tests
+  - Internal security testing
+  - Annual red team exercises
+  sdlc:
+  - Infrastructure-as-code with automated security checks
+  - SAST
+  - IaC scanning
+  - Dependency vulnerability scanning
+evidence:
+- source: https://p0.dev/trust-center/
+  keywords: [soc 2 type ii, trust center, penetration testing, advantage partners]

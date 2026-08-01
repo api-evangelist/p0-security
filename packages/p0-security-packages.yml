@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  npm registry, github.com/p0-security, docs.p0.dev. P0 ships a CLI and IaC
+  providers rather than language client-library SDKs; those are catalogued here
+  and the command surface is detailed in cli/p0-security-cli.yml.
+packages:
+- language: javascript
+  registry: npm
+  name: "@p0security/cli"
+  url: https://www.npmjs.com/package/@p0security/cli
+  install: npm install -g @p0security/cli
+  version: 0.27.9
+  official: true
+  kind: cli
+  repo: https://github.com/p0-security/p0cli
+  description: >-
+    Official P0 Security command-line interface. Request, grant, and access
+    cloud-native resources; assume AWS roles; SSH/RDP/SCP into instances via
+    just-in-time access. Also distributed as a standalone executable
+    (macOS/Windows/Debian) on the GitHub releases page.
+- language: go
+  registry: terraform
+  name: p0-security/p0
+  url: https://registry.terraform.io/providers/p0-security/p0/latest
+  install: 'terraform: required_providers { p0 = { source = "p0-security/p0" } }'
+  official: true
+  kind: terraform-provider
+  repo: https://github.com/p0-security/terraform-provider-p0
+  description: Terraform provider for configuring the P0 app as code.
+- language: typescript
+  registry: github
+  name: iam-privilege-catalog
+  url: https://github.com/p0-security/iam-privilege-catalog
+  install: 'source: github.com/p0-security/iam-privilege-catalog'
+  official: true
+  kind: data-catalog
+  description: Open catalog for understanding risks from granting IAM privileges.

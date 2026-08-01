@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/p0-security/p0cli/releases
+scheme: semver
+subject: "@p0security/cli (P0 CLI)"
+current_version: 0.27.9
+note: >-
+  P0 does not publish a single dated changelog for the JIT API; the official P0
+  CLI ships tagged, dated GitHub releases which are the closest public release
+  history. Recent window below.
+entries:
+- version: v0.27.9
+  date: '2026-07-20'
+  highlights:
+  - Retry access propagation when sshd offers auth methods besides publickey (CUS-800).
+- version: v0.27.8
+  date: '2026-07-16'
+  highlights:
+  - CI fix so FIPS OpenSSL env no longer leaks into macOS artifact uploads.
+- version: v0.27.7
+  date: '2026-07-13'
+  highlights:
+  - Add new jump-host types to the CLI; clean up ssh-bastion provider types.
+- version: v0.27.6
+  date: '2026-07-07'
+  highlights:
+  - More robust logging when a file-transfer access request goes stale.
+- version: v0.27.5
+  date: '2026-06-29'
+  highlights:
+  - Remove legacy delegate structure; File Transfer object deletion from S3.
+- version: v0.27.4
+  date: '2026-06-23'
+  highlights:
+  - Maintenance release.

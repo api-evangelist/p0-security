@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: derived
+format: http-status
+source: openapi/p0-security-jit-openapi.yml
+note: >-
+  Derived from documented 4xx responses in the P0 JIT API. Responses are plain
+  HTTP status codes (no application/problem+json envelope documented).
+problems:
+- status: 400
+  title: Bad request – malformed payload
+  applies_to: [submitCommand, approveRequest, denyRequest, revokeRequest]
+  remediation: Validate the request body (required fields argv/scriptName or expirationLength) and path parameters.
+- status: 401
+  title: Unauthorized – missing or invalid token
+  applies_to: [submitCommand, approveRequest, denyRequest, revokeRequest]
+  remediation: Supply a valid bearer (JWT) token in the Authorization header.

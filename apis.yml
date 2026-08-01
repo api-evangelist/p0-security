@@ -1,8 +1,20 @@
 aid: p0-security
 name: P0 Security
-description: P0 Security is a company surfaced as a portfolio company of lightspeed-venture-partners and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  P0 Security is a cloud-native Privileged Access Management (PAM) platform that
+  governs runtime authorization for human users, machine/service accounts, and
+  AI agents across hybrid and multi-cloud environments. Its AuthZ Control Plane
+  enforces just-in-time (JIT), least-privilege access to AWS, Google Cloud,
+  Azure, Oracle Cloud, Kubernetes, databases, SSH hosts, Okta, and Google
+  Workspace — provisioning short-lived credentials on request, routing approvals
+  through Slack, Microsoft Teams, the web app, or the CLI, and automatically
+  revoking access when it expires. P0 also provides an access inventory and
+  identity graph, posture scanning for over-privileged and stale access,
+  service-account key rotation, and an agentic authorization control plane with
+  a self-hosted MCP Gateway that enforces least-privilege policy on every MCP
+  tool call. Developers integrate P0 through the official p0 CLI, a Terraform
+  provider, and a bearer-authenticated Just-in-Time Access API (Command,
+  Permission Request, and Access Policies).
 url: https://raw.githubusercontent.com/api-evangelist/p0-security/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,14 +22,124 @@ x-backed-by:
 - lightspeed-venture-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://p0.dev/p0.jpg
 tags:
 - Company
-apis: []
+- Security
+- Privileged Access Management
+- Identity and Access Management
+- Just-in-Time Access
+- Cloud Security
+- Authorization
+- Zero Trust
+- Agentic Access
+- MCP
+apis:
+- aid: p0-security:p0-security-command-api
+  name: P0 Security Command API
+  description: Submit commands that trigger access workflows.
+  humanURL: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+  baseURL: https://api.p0.app
+  tags:
+  - Command
+  properties:
+  - type: OpenAPI
+    url: openapi/p0-security-command-api-openapi.yml
+  - type: Documentation
+    url: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+  - type: Authentication
+    url: authentication/p0-security-authentication.yml
+- aid: p0-security:p0-security-permission-requests-api
+  name: P0 Security Permission Requests API
+  description: Approve, deny, or revoke just-in-time access requests.
+  humanURL: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+  baseURL: https://api.p0.app
+  tags:
+  - Permission Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/p0-security-permission-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+  - type: Authentication
+    url: authentication/p0-security-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/p0-security-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/p0-security-agentic-access.yml
+- type: DeveloperPortal
+  url: https://docs.p0.dev/
+- type: Documentation
+  url: https://docs.p0.dev/
+- type: APIReference
+  url: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+- type: GettingStarted
+  url: https://docs.p0.dev/getting-started/p0-security-onboarding
+- type: Support
+  url: https://support.p0.dev/
+- type: Blog
+  url: https://p0.dev/blog/
+- type: GitHubOrganization
+  url: https://github.com/p0-security
+- type: SignUp
+  url: https://p0.app/
+- type: Login
+  url: https://p0.app/
+- type: TermsOfService
+  url: https://p0.app/tos
+- type: PrivacyPolicy
+  url: https://p0.app/privacy
+- type: TrustCenter
+  url: https://p0.dev/trust-center/
+- type: Compliance
+  url: security/p0-security-trust-center.yml
+- type: Conformance
+  url: conformance/p0-security-conformance.yml
+- type: Packages
+  url: packages/p0-security-packages.yml
+- type: CLI
+  url: cli/p0-security-cli.yml
+- type: MCPServer
+  url: mcp/p0-security-mcp.yml
+- type: LLMsTxt
+  url: llms/p0-security-llms.txt
+- type: ChangeLog
+  url: changelog/p0-security-changelog.yml
+- type: Lifecycle
+  url: lifecycle/p0-security-lifecycle.yml
+- type: Conventions
+  url: conventions/p0-security-conventions.yml
+- type: ErrorCatalog
+  url: errors/p0-security-problem-types.yml
+- type: DataModel
+  url: data-model/p0-security-data-model.yml
+- type: Overlay
+  url: overlays/p0-security-jit-overlay.yaml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

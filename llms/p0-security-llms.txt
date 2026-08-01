@@ -1,0 +1,187 @@
+# P0 App Documentation
+
+## P0 App Documentation
+
+- [What Is P0?](https://docs.p0.dev/readme.md): P0 Security is a cloud-native Privileged Access Management platform. Enforce just-in-time access and least-privilege governance across multi-cloud environments.
+- [P0 Dashboard](https://docs.p0.dev/readme/p0-dashboard.md): Track access security with automated reporting. View identities, posture findings, JIT access metrics, and request trends from the P0 dashboard.
+- [Access Inventory](https://docs.p0.dev/readme/access-inventory.md): Discover production assets, identities, and access risks across AWS, Google Cloud, Kubernetes, Okta, and Google Workspace with P0's access inventory.
+- [Posture](https://docs.p0.dev/readme/posture.md): Automatically scan your cloud environment for access risks. P0 Security detects overprivileged accounts, stale credentials, and security vulnerabilities.
+- [Just-In-Time Access](https://docs.p0.dev/readme/just-in-time-access.md): Grant tailored, short-lived privileges to specific cloud resources on demand. Reduce standing access and enforce least privilege with P0 Security's JIT access.
+- [Agentic Authorization Control Plane](https://docs.p0.dev/readme/agentic-control-plane.md): Verify the human and the agent, enforce least-privilege policy on every MCP tool call, and keep a complete audit trail with P0's Controller and self-hosted MCP Gateway.
+- [Service-Account Key Rotation](https://docs.p0.dev/readme/service-account-key-rotation.md): Manage rotation of static service account credentials for third-party systems. P0 discovers owners, creates fresh credentials, and coordinates updates.
+- [P0 Onboarding](https://docs.p0.dev/getting-started/p0-security-onboarding.md): Deploy P0 Security, integrate your cloud environments, and establish just-in-time access for human and non-human identities. For security and DevOps teams.
+- [Supported Identity Providers](https://docs.p0.dev/getting-started/p0-security-onboarding/supported-identity-providers.md)
+- [Okta Sign-In Setup](https://docs.p0.dev/getting-started/p0-security-onboarding/supported-identity-providers/okta-sign-in-setup.md)
+- [Request Access Quickstart](https://docs.p0.dev/getting-started/request-access-quickstart.md): Request your first just-in-time access to a cloud resource through Slack, Microsoft Teams, the P0 web app, or the CLI. A quickstart for developers and engineers.
+- [Getting Started with Just-in-Time Access](https://docs.p0.dev/getting-started/getting-started-with-just-in-time-access.md): Install P0 Security, configure approval workflows, and make your first just-in-time access request. A step-by-step guide for security and DevOps teams.
+- [Configure Your First Access Policy](https://docs.p0.dev/getting-started/configure-your-first-access-policy.md): Create an access policy in P0 Security's Policy Studio to control who can request access, what they can access, and who approves. A step-by-step tutorial for security administrators.
+- [Getting Started with Posture](https://docs.p0.dev/getting-started/getting-started-with-posture.md): Connect your cloud environment, run your first posture scan, and triage access risk findings with P0 Security's posture management product.
+- [Getting Started with Access Inventory](https://docs.p0.dev/getting-started/getting-started-with-access-inventory.md): Connect your cloud environment, navigate the Access Inventory page, run your first query, investigate access risks, and save a monitor with P0 Security.
+- [Getting Started with the P0 CLI](https://docs.p0.dev/getting-started/getting-started-with-the-p0-cli.md): Install the P0 CLI, authenticate, send your first permission request, and open your first SSH session with just-in-time access — all from the command line.
+- [Deploying the P0 MCP Gateway](https://docs.p0.dev/getting-started/deploying-the-p0-mcp-gateway.md): Architecture and deployment of the self-hosted P0 MCP Gateway and OAuth server using the batteries-included Helm chart or the Terraform module.
+- [Share P0 With Your Team](https://docs.p0.dev/getting-started/share-p0-with-your-team.md): Use the P0 slackbot to help your users learn how to create access requests through P0.
+- [Configure Access Policies](https://docs.p0.dev/getting-started/configuring-access-policies.md): Set up access policies in Policy Studio to control who can request access, what they can request, and who approves it. A step-by-step guide for security administrators.
+- [Access Inventory](https://docs.p0.dev/inventory/access-inventory.md): Browse and query your entire IAM configuration. Combine data from identity providers, IAM policies, access logs, and P0's IAM Privilege Catalog.
+- [Result Details](https://docs.p0.dev/inventory/result-details.md)
+- [Query Search](https://docs.p0.dev/inventory/query-search.md)
+- [Query Language Basics](https://docs.p0.dev/inventory/query-search/query-language-basics.md): A beginner's guide to querying P0's Access Inventory. Learn the core search terms (identity, credential, entitlement, risk), the colon, arrow, and reverse-arrow operators, the type argument, and how t
+- [Search Reference](https://docs.p0.dev/inventory/query-search/search-reference.md)
+- [Posture Overview](https://docs.p0.dev/posture/posture-overview.md): Detect access vulnerabilities with automated monitors. View scan results, define custom policies, and enforce organization-specific access controls with P0.
+- [Create a custom monitor](https://docs.p0.dev/posture/create-a-custom-monitor.md): Build a custom posture monitor in P0 to continuously detect a specific access vulnerability, such as unused privileged grants, across every environment scan.
+- [Monitor Results](https://docs.p0.dev/posture/monitor-results.md)
+- [Finding Details](https://docs.p0.dev/posture/finding-details.md)
+- [Just-in-time access](https://docs.p0.dev/access-management/just-in-time-access.md): Set up ephemeral, on-demand access to production resources. Requests are approved, provisioned, and automatically revoked within minutes using P0 Security.
+- [Requesting Access](https://docs.p0.dev/access-management/just-in-time-access/requesting-access.md): Request just-in-time access to cloud resources using P0.
+- [For Another Party](https://docs.p0.dev/access-management/just-in-time-access/requesting-access/for-another-party.md)
+- [Web Request Modal](https://docs.p0.dev/access-management/just-in-time-access/requesting-access/web-request-modal.md)
+- [Approving Access](https://docs.p0.dev/access-management/just-in-time-access/approving-access.md): This page describes how to review and approve just-in-time access requests
+- [Auto-approve access for on-call engineers](https://docs.p0.dev/access-management/just-in-time-access/approving-access/auto-approve-on-call-access.md): Configure P0 to automatically grant just-in-time access to engineers who are on-call, using your PagerDuty or Incident.io schedule. Give responders fast, time-boxed access during incidents without man
+- [Pre-approving Access](https://docs.p0.dev/access-management/just-in-time-access/approving-access/pre-approving-access.md)
+- [P0 allow modal, CLI, and UI](https://docs.p0.dev/access-management/just-in-time-access/approving-access/p0-allow-workflows.md): Configure P0 allow pre-approvals from Slack, the CLI, or the P0 web app.
+- [Access Policies](https://docs.p0.dev/access-management/just-in-time-access/request-routing.md)
+- [Configure your first access policy](https://docs.p0.dev/access-management/just-in-time-access/request-routing/configure-your-first-access-policy.md): Create and manage access policies in P0 Security's Policy Studio to control who can request access to which resources and how requests are approved.
+- [Google Cloud Filtering](https://docs.p0.dev/access-management/just-in-time-access/request-routing/google-cloud-filtering.md)
+- [AWS Filtering](https://docs.p0.dev/access-management/just-in-time-access/request-routing/aws-filtering.md)
+- [Microsoft Azure Filtering](https://docs.p0.dev/access-management/just-in-time-access/request-routing/microsoft-azure-filtering.md): This document covers the various ways fine-grained just-in-time access for Microsoft Azure can be configured by using P0's access policies.
+- [SSH Filtering](https://docs.p0.dev/access-management/just-in-time-access/request-routing/ssh-filtering.md)
+- [Session Recording](https://docs.p0.dev/access-management/just-in-time-access/session-recording.md): Session Recording in P0 allows you to view detailed activity that occurs within a privileged session.
+- [AWS](https://docs.p0.dev/access-management/just-in-time-access/session-recording/aws.md): View CloudTrail activity taken within a privileged session.
+- [Just-in-time API](https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api.md)
+- [Command API](https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api/command-api.md): Enable external systems to programmatically initiate access requests—enabling automation and integration with internal tools, bots, and security workflows.
+- [Access requests API](https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api/access-requests-api.md): Enable programmatic approval, denial, and revocation of access—enabling seamless integration with internal tools, bots, and security workflows for automated access escalation.
+- [Access policies API](https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api/routing-rules-api.md): Enable fine-grained control over how just-in-time access requests are evaluated, approved, and enforced—ensuring secure, compliant, and context-aware access policies.
+- [Creating an Environment](https://docs.p0.dev/environments/creating-an-environment.md)
+- [Install IAM assessment on Google Cloud](https://docs.p0.dev/environments/creating-an-environment/install-iam-assessment-google-cloud.md): Install the P0 IAM assessment integration on Google Cloud to collect IAM data. Required to use Access Inventory and Posture for your GCP projects.
+- [Install IAM assessment on AWS](https://docs.p0.dev/environments/creating-an-environment/install-iam-assessment-aws.md): Install the P0 IAM assessment integration on AWS to collect IAM data. Required to use Access Inventory and Posture for your AWS accounts.
+- [Install IAM assessment on Microsoft Azure](https://docs.p0.dev/environments/creating-an-environment/install-iam-assessment-azure.md): Install the P0 IAM assessment integration on Microsoft Azure to collect IAM data. Required to use Access Inventory and Posture for your Azure subscriptions.
+- [Environment Terminology](https://docs.p0.dev/environments/environment-terminology.md)
+- [Settings](https://docs.p0.dev/environments/settings.md)
+- [Integrations](https://docs.p0.dev/integrations/integrations.md): Connect P0 with AWS, Google Cloud, Azure, Kubernetes, Okta, Slack, and other systems. Configure cloud, directory, notifier, and SIEM integrations.
+- [Notifier integrations](https://docs.p0.dev/integrations/notifier-integrations.md)
+- [Slack](https://docs.p0.dev/integrations/notifier-integrations/slack.md)
+- [Microsoft Teams](https://docs.p0.dev/integrations/notifier-integrations/microsoft-teams.md)
+- [Email](https://docs.p0.dev/integrations/notifier-integrations/email.md)
+- [Custom Notifiers](https://docs.p0.dev/integrations/notifier-integrations/custom-notifiers.md): Integrate P0 with any internal notification system you own, or with systems that do not have a built-in notification service yet.
+- [AWS Lambda Notifier](https://docs.p0.dev/integrations/notifier-integrations/custom-notifiers/aws-lambda-notifier.md)
+- [Resource integrations](https://docs.p0.dev/integrations/resource-integrations.md): Configure just-in-time access for AWS, Google Cloud, Azure, Kubernetes, SSH, and more. Install P0 Security resource integrations to manage privileged cloud access.
+- [Agentic Gateway](https://docs.p0.dev/integrations/resource-integrations/agentic-gateway.md): Configure the P0 Agentic Gateway and the upstream MCP servers it fronts, so P0-managed AI agents can access them under least-privilege policy.
+- [Gateway](https://docs.p0.dev/integrations/resource-integrations/agentic-gateway/gateway.md): Register your self-hosted P0 MCP Gateway with P0 so it can enforce policy on agent tool calls and receive its MCP server definitions.
+- [MCP server](https://docs.p0.dev/integrations/resource-integrations/agentic-gateway/mcp-server.md): Configure upstream MCP servers behind the P0 Agentic Gateway to make them available to P0-managed agents under policy.
+- [AWS MCP server](https://docs.p0.dev/integrations/resource-integrations/agentic-gateway/mcp-server/aws.md): Install the predefined AWS MCP server behind the P0 Agentic Gateway, giving agents policy-scoped, credential-free access to the AWS CLI.
+- [AWS](https://docs.p0.dev/integrations/resource-integrations/aws.md): Install P0 IAM management on AWS in about 10 minutes. Configure just-in-time access, identity governance, and privilege management for your AWS environment.
+- [Requesting AWS access](https://docs.p0.dev/integrations/resource-integrations/aws/requesting-access.md): How to request just-in-time access to AWS IAM policies, groups, and roles through P0 via Slack, Teams, Webex, the P0 CLI, or the P0 dashboard.
+- [Permission levels](https://docs.p0.dev/integrations/resource-integrations/aws/requesting-access/permission-levels.md): Permission levels available when requesting just-in-time access to AWS resources through P0, including P0 curated policies and scoped AWS-managed policies.
+- [AWS Integration API](https://docs.p0.dev/integrations/resource-integrations/aws/aws-integration-api.md): Manage installable components of the P0 Amazon Web Services integration.
+- [AWS OIDC](https://docs.p0.dev/integrations/resource-integrations/aws/aws-oidc.md): Install the AWS OIDC federation component so P0 can grant and revoke AWS access for OIDC-authenticated agents running through the P0 MCP Gateway.
+- [Function invocation](https://docs.p0.dev/integrations/resource-integrations/aws/function-invocation.md)
+- [Managed services](https://docs.p0.dev/integrations/resource-integrations/aws/managed-services.md)
+- [AWS RDS](https://docs.p0.dev/integrations/resource-integrations/aws/managed-services/aws-rds.md)
+- [Cisco Secure Access](https://docs.p0.dev/integrations/resource-integrations/cisco-secure-access.md): Installing P0 access management for Cisco Secure Access takes about 15 minutes.
+- [Installation](https://docs.p0.dev/integrations/resource-integrations/cisco-secure-access/installation.md)
+- [Requesting Cisco Secure Access](https://docs.p0.dev/integrations/resource-integrations/cisco-secure-access/requesting-access.md): How to request just-in-time access to private network resources protected by Cisco Secure Access through P0 via Slack, Teams, Webex, the P0 CLI, or the P0 dashboard.
+- [Cloudflare](https://docs.p0.dev/integrations/resource-integrations/cloudflare.md): Managed just-in-time access to Cloudflare account roles
+- [Requesting Cloudflare access](https://docs.p0.dev/integrations/resource-integrations/cloudflare/requesting-access.md): How to request access to a Cloudflare account role via P0
+- [Custom Resource](https://docs.p0.dev/integrations/resource-integrations/custom-resource.md): Integrate P0 with any internal system you own, or with systems that do not have a built-in integration yet.
+- [Installing a custom resource integration](https://docs.p0.dev/integrations/resource-integrations/custom-resource/installing-a-custom-resource-integration.md)
+- [File Transfer](https://docs.p0.dev/integrations/resource-integrations/file-transfer.md): Set up P0's File Transfer integration to move local files to AWS EC2 instances through a customer-owned S3 bucket, with just-in-time access and full auditing.
+- [Transfer a file to an instance](https://docs.p0.dev/integrations/resource-integrations/file-transfer/transferring-files.md): Use the p0 file-transfer command to copy a local file to an AWS EC2 instance through P0's just-in-time File Transfer integration.
+- [GitHub](https://docs.p0.dev/integrations/resource-integrations/github.md): Managed just-in-time access for GitHub organization teams
+- [Requesting GitHub access](https://docs.p0.dev/integrations/resource-integrations/github/requesting-access.md): How to request access to a GitHub team via P0
+- [Google Cloud](https://docs.p0.dev/integrations/resource-integrations/google-cloud.md): Set up P0's integration for Google Cloud Platform. Configure IAM management, just-in-time access, and privilege governance for your GCP environment.
+- [Security perimeter](https://docs.p0.dev/integrations/resource-integrations/google-cloud/security-perimeter.md): This page describes how to set up a Cloud Run security perimeter for P0 to manage access in your Google Cloud environment.
+- [Requesting Google Cloud access](https://docs.p0.dev/integrations/resource-integrations/google-cloud/requesting-access.md): How to request access to Google Cloud permissions, roles, and resources through the P0 bot
+- [Permissions reference](https://docs.p0.dev/integrations/resource-integrations/google-cloud/permissions-reference.md)
+- [Cloud Storage](https://docs.p0.dev/integrations/resource-integrations/google-cloud/permissions-reference/cloud-storage.md)
+- [Compute Engine](https://docs.p0.dev/integrations/resource-integrations/google-cloud/permissions-reference/compute-engine.md)
+- [Cloud Run invocation](https://docs.p0.dev/integrations/resource-integrations/google-cloud/cloud-run-invocation.md)
+- [Grafana Cloud](https://docs.p0.dev/integrations/resource-integrations/grafana-cloud.md): Connect P0 to Grafana Cloud to grant just-in-time access to Grafana Cloud teams.
+- [Requesting access](https://docs.p0.dev/integrations/resource-integrations/grafana-cloud/requesting-access.md): How to request just-in-time access to Grafana Cloud teams through P0 via the P0 dashboard, Slack, Teams, or the P0 CLI.
+- [Kubernetes](https://docs.p0.dev/integrations/resource-integrations/kubernetes.md): Add and configure P0's Kubernetes integration. Grant just-in-time, least-privilege access to Kubernetes clusters across AWS, Azure, and Google Cloud.
+- [Terraform installation](https://docs.p0.dev/integrations/resource-integrations/kubernetes/terraform-installation.md): How to install the P0 Kubernetes (EKS) integration using Terraform
+- [Requesting Kubernetes access](https://docs.p0.dev/integrations/resource-integrations/kubernetes/requesting-access.md): How to request access to Kubernetes permissions, roles, and resources through the P0 bot
+- [Advanced requests](https://docs.p0.dev/integrations/resource-integrations/kubernetes/advanced-requests.md): How to request common Kubernetes access patterns with P0
+- [Microsoft Azure](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure.md): Install P0 IAM management on Microsoft Azure in about 10 minutes. Configure just-in-time access and privilege governance for your Azure environment.
+- [Azure App Registration](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/azure-app-registration.md): Create the Azure app registration that establishes P0's service identity in your tenant.
+- [IAM Management](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/iam-management.md): Enable Just‑in‑Time access to Azure resources by installing IAM management.
+- [Configure bastion host integration](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/configure-bastion-host-integration.md): Choose how P0 connects to your Azure VMs — through an Azure Bastion host or a custom jump host — to enable secure SSH access.
+- [Azure bastion host](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/configure-bastion-host-integration/azure-bastion-host.md): Provision SSH access to your Azure VMs through a managed Azure Bastion host.
+- [Custom jump host](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/configure-bastion-host-integration/custom-jump-host.md): Connect P0 to your Azure VMs through your own virtual machine acting as a jump host.
+- [Jump host sizing and tuning](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/configure-bastion-host-integration/custom-jump-host/jump-host-sizing-and-tuning.md): Reference sshd configuration and sizing limits for tuning a custom jump host VM, including a sample forwarding-only sshd\_config and per-SKU load guidance.
+- [Create a custom role](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/configure-bastion-host-integration/create-a-custom-role.md): Create a custom Azure role with the Azure CLI or Terraform to grant standard or administrator access to VMs reached through a P0 jump host or bastion host.
+- [Install SSH access](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/install-ssh-access.md): Connect P0 to your Azure VMs by installing SSH access.
+- [Jump host management](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/jump-host-management.md): Configure the jump host management connector so P0 can send privileged commands, such as terminating a live SSH session, to your Azure jump hosts.
+- [The jump host connector application](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/jump-host-management/jump-host-connector-application.md): Understand the jump host connector application — the session terminator app registration P0 authenticates as, the Function App it protects, and the least-privilege role it uses to manage access to you
+- [The jump host connector image](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/jump-host-management/jump-host-connector-image.md): Understand the jump host connector image — the container that runs P0's Azure function for terminating live SSH sessions — and where it is published.
+- [Requesting Microsoft Azure access](https://docs.p0.dev/integrations/resource-integrations/microsoft-azure/requesting-access.md): How to request just-in-time access to Microsoft Azure subscriptions, resources, and roles through P0 via Slack, Teams, Webex, the P0 CLI, or the P0 dashboard.
+- [MySQL](https://docs.p0.dev/integrations/resource-integrations/mysql.md)
+- [Installation](https://docs.p0.dev/integrations/resource-integrations/mysql/installation.md)
+- [Requesting MySQL access](https://docs.p0.dev/integrations/resource-integrations/mysql/requesting-access.md): How to request just-in-time access to MySQL databases through P0 using the CLI.
+- [Oracle Cloud](https://docs.p0.dev/integrations/resource-integrations/oracle-cloud.md): Installing P0 IAM management on Oracle Cloud Infrastructure (OCI).
+- [Requesting Oracle Cloud access](https://docs.p0.dev/integrations/resource-integrations/oracle-cloud/requesting-access.md): Requesting access to Oracle Cloud Infrastructure (OCI) groups through P0.
+- [PostgreSQL](https://docs.p0.dev/integrations/resource-integrations/postgresql-new.md)
+- [Installing an RDS Database](https://docs.p0.dev/integrations/resource-integrations/postgresql-new/installing-an-rds-database.md)
+- [Requesting PostgreSQL Access](https://docs.p0.dev/integrations/resource-integrations/postgresql-new/requesting-postgresql-access.md)
+- [Salesforce](https://docs.p0.dev/integrations/resource-integrations/salesforce.md): Managed just-in-time access to Salesforce permission sets
+- [Requesting Salesforce access](https://docs.p0.dev/integrations/resource-integrations/salesforce/requesting-access.md): How to request access to a Salesforce permission set via P0
+- [Snowflake](https://docs.p0.dev/integrations/resource-integrations/snowflake.md)
+- [SSH](https://docs.p0.dev/integrations/resource-integrations/ssh.md): How to request SSH permissions for AWS, Microsoft Azure and GCP instances.
+- [Self-hosted](https://docs.p0.dev/integrations/resource-integrations/ssh/self-hosted.md)
+- [Tailscale](https://docs.p0.dev/integrations/resource-integrations/tailscale.md): Installing P0 access management for your Tailscale network takes about 5 minutes.
+- [Requesting Tailscale access](https://docs.p0.dev/integrations/resource-integrations/tailscale/requesting-access.md): How to request just-in-time access to Tailscale devices and network resources through P0 via Slack, Teams, Webex, the P0 CLI, or the P0 dashboard.
+- [Directory integrations](https://docs.p0.dev/integrations/directory-integrations.md): Connect P0 Security with Okta, Google Workspace, and Microsoft Entra ID. Configure directory integrations for group-based access policies and user provisioning.
+- [Microsoft Entra ID](https://docs.p0.dev/integrations/directory-integrations/microsoft-entra-id.md)
+- [Requesting Microsoft Entra ID access](https://docs.p0.dev/integrations/directory-integrations/microsoft-entra-id/requesting-access.md): Requesting access to Microsoft Entra ID Roles/Groups
+- [Viewing Security perimeter logs](https://docs.p0.dev/integrations/directory-integrations/microsoft-entra-id/viewing-security-perimeter-logs.md): View and query logs from the P0 Security perimeter Azure Function running in your Microsoft Entra ID environment.
+- [Microsoft Entra ID (Legacy)](https://docs.p0.dev/integrations/directory-integrations/microsoft-entra-id-legacy.md)
+- [Requesting Microsoft Entra ID access (legacy)](https://docs.p0.dev/integrations/directory-integrations/microsoft-entra-id-legacy/requesting-access.md): Requesting access to Microsoft Entra ID groups
+- [Google Workspace](https://docs.p0.dev/integrations/directory-integrations/google-workspace.md)
+- [Okta](https://docs.p0.dev/integrations/directory-integrations/okta.md)
+- [Approval integrations](https://docs.p0.dev/integrations/approval-integrations.md)
+- [PagerDuty](https://docs.p0.dev/integrations/approval-integrations/pagerduty.md)
+- [Incident.io](https://docs.p0.dev/integrations/approval-integrations/incidentio.md)
+- [SIEM Integrations](https://docs.p0.dev/integrations/siem-integrations.md): SIEM integrations allow you to stream P0 audit logs to target SIEM tools (Datadog, Splunk).
+- [Audit log format](https://docs.p0.dev/integrations/siem-integrations/audit-log-format.md): Reference for P0 audit log fields, actions, and payload formats streamed to SIEM integrations.
+- [Datadog setup](https://docs.p0.dev/integrations/siem-integrations/datadog-setup.md): Integration to send P0 audit logs to Datadog.
+- [Splunk HEC setup](https://docs.p0.dev/integrations/siem-integrations/splunk-hec-setup.md): Integration to send P0 audit logs to Splunk instance.
+- [Tracker integrations](https://docs.p0.dev/integrations/tracker-integrations.md)
+- [Jira](https://docs.p0.dev/integrations/tracker-integrations/jira.md)
+- [Role-Based Access Control](https://docs.p0.dev/p0-management/role-based-access-control.md): Configure role-based access control to enforce least-privileged access for your P0 Security users. Assign roles and manage permissions across your organization.
+- [Generating an API key](https://docs.p0.dev/p0-management/generating-an-api-key.md): Generate an API key to use the P0 Management API or install P0 via Terraform.
+- [Management API](https://docs.p0.dev/p0-management/management-api.md)
+- [Role management API](https://docs.p0.dev/p0-management/management-api/role-management-api.md)
+- [Just-in-time settings API](https://docs.p0.dev/p0-management/management-api/just-in-time-settings-api.md)
+- [API Key Management API](https://docs.p0.dev/p0-management/management-api/api-key-management-api.md): Create, list, and delete P0 API keys programmatically with the Management API.
+- [Installing p0 CLI](https://docs.p0.dev/p0-cli/installing-p0-cli.md): Download and install the P0 CLI on macOS or Windows. Authenticate with your P0 account and start requesting cloud access from the command line.
+- [Windows](https://docs.p0.dev/p0-cli/installing-p0-cli/windows.md)
+- [macOS](https://docs.p0.dev/p0-cli/installing-p0-cli/macos.md)
+- [p0 Commands and Usage](https://docs.p0.dev/p0-cli/p0-commands-and-usage.md): Complete reference for P0 CLI commands including login, SSH, access requests, AWS role assumption, and Kubernetes configuration.
+- [p0 login](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-login.md)
+- [p0 logout](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-logout.md)
+- [p0 ssh](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-ssh.md)
+- [p0 request](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-request.md)
+- [p0 aws role assume](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-aws-role-assume.md)
+- [p0 aws permission-set assume](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-aws-permission-set-assume.md)
+- [p0 aws rds](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-aws-rds.md): Generate RDS database authentication tokens for PostgreSQL and MySQL through P0 just-in-time access.
+- [p0 ls](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-ls.md)
+- [p0 allow](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-allow.md)
+- [p0 grant](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-grant.md)
+- [p0 kubeconfig](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-kubeconfig.md)
+- [p0 scp](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-scp.md)
+- [p0 file-transfer](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-file-transfer.md)
+- [p0 rdp](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-rdp.md)
+- [p0 ssh-resolve](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-ssh-resolve.md)
+- [p0 claude mcp add](https://docs.p0.dev/p0-cli/p0-commands-and-usage/p0-claude-mcp-add.md)
+- [Troubleshooting](https://docs.p0.dev/p0-cli/troubleshooting.md)
+- [p0 login](https://docs.p0.dev/p0-cli/troubleshooting/p0-login.md)
+- [p0 ssh](https://docs.p0.dev/p0-cli/troubleshooting/p0-ssh.md)
+- [p0 request](https://docs.p0.dev/p0-cli/troubleshooting/p0-request.md)
+- [p0 aws role assume](https://docs.p0.dev/p0-cli/troubleshooting/p0-aws-role-assume.md)
+- [p0 aws permission-set assume](https://docs.p0.dev/p0-cli/troubleshooting/p0-aws-permission-set-assume.md)
+- [p0 ls](https://docs.p0.dev/p0-cli/troubleshooting/p0-ls.md)
+- [p0 allow](https://docs.p0.dev/p0-cli/troubleshooting/p0-allow.md)
+- [p0 grant](https://docs.p0.dev/p0-cli/troubleshooting/p0-grant.md)
+- [p0 kubeconfig](https://docs.p0.dev/p0-cli/troubleshooting/p0-kubeconfig.md)
+- [p0 scp](https://docs.p0.dev/p0-cli/troubleshooting/p0-scp.md)
+- [p0 ssh-resolve](https://docs.p0.dev/p0-cli/troubleshooting/p0-ssh-resolve.md)
+- [2026](https://docs.p0.dev/change-log/2026.md): This page has all the current & past feature, updates and changes to the p0 app for 2026.
+- [2025](https://docs.p0.dev/change-log/2025.md): This page has all the current & past feature, updates and changes to the p0 app for 2025.

@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of /.well-known/* on P0 hosts
+note: >-
+  No /.well-known discovery documents are published on any P0 host. All probed
+  paths returned 404. Recorded as a negative result; no raw files saved and no
+  WellKnown/SecurityTxt pointer emitted.
+hosts:
+- host: https://api.p0.app
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://p0.app
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+- host: https://p0.dev
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+- host: https://docs.p0.dev
+  documents:
+  - {path: /.well-known/security.txt, status: 404}

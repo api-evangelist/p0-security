@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  openapi/p0-security-jit-openapi.yml + https://p0.dev/trust-center/
+standards:
+- id: oauth2-bearer
+  conforms: true
+  evidence: >-
+    API uses HTTP bearer (JWT) tokens on every endpoint (securityScheme
+    bearerAuth, scheme=bearer, bearerFormat=JWT).
+- id: soc2-type-ii
+  conforms: true
+  evidence: >-
+    SOC 2 Type II, independently audited by Advantage Partners (p0.dev/trust-center).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses (400/401) are documented without application/problem+json bodies.
+- id: oidc
+  conforms: false
+  evidence: No OpenID Provider metadata published; no /.well-known/openid-configuration (404).
+- id: scim
+  conforms: false
+- id: fapi
+  conforms: false

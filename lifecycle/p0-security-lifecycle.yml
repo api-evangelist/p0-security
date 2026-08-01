@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  openapi/p0-security-jit-openapi.yml + github.com/p0-security/p0cli releases +
+  docs.p0.dev
+versioning:
+  api_version: '1.0.0'
+  scheme: org-scoped-path
+  notes: >-
+    API paths are organization-scoped (/o/{orgId}/...); the CLI (@p0security/cli)
+    is versioned SemVer with tagged GitHub releases (v0.27.x as of 2026-07).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_notes: No public status page found (support via support.p0.dev).
+deprecated_operations: []

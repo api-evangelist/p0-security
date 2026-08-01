@@ -1,0 +1,197 @@
+openapi: 3.0.4
+info:
+  title: P0 Just-in-Time Access API
+  version: 1.0.0
+  description: >-
+    P0 Security's Just-In-Time (JIT) access API surface, consolidated from P0's
+    published Command API and Permission Request API. These endpoints let
+    external systems, bots, CI/CD pipelines, and security workflows
+    programmatically submit access commands and approve, deny, or revoke
+    permission requests within a P0 organization. All endpoints are protected
+    with bearer (JWT) tokens.
+  contact:
+    name: P0 Security
+    url: https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+  x-apisjson-source: >-
+    https://docs.p0.dev/access-management/just-in-time-access/just-in-time-api
+    (Command API + Access Requests API, embedded OpenAPI blocks harvested verbatim)
+servers:
+  - url: https://api.p0.app
+security:
+  - bearerAuth: []
+tags:
+  - name: Command
+    description: Submit commands that trigger access workflows.
+  - name: Permission Requests
+    description: Approve, deny, or revoke just-in-time access requests.
+paths:
+  /o/{orgId}/command:
+    post:
+      tags:
+        - Command
+      summary: Submit a command to P0
+      operationId: submitCommand
+      description: >
+        Submits a command to P0. This endpoint allows automation of access
+        requests or other operations.
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Organization identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - argv
+                - scriptName
+              properties:
+                argv:
+                  type: array
+                  items:
+                    type: string
+                  description: Command-line arguments
+                scriptName:
+                  type: string
+                  description: The script or command name to execute
+      responses:
+        '200':
+          description: Command accepted and processed
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ok
+                properties:
+                  ok:
+                    type: boolean
+                  message:
+                    type: string
+                  id:
+                    type: string
+                    description: Request ID
+                  isPreexisting:
+                    type: boolean
+                  isPersistent:
+                    type: boolean
+        '400':
+          description: Bad request – malformed payload
+        '401':
+          description: Unauthorized – missing or invalid token
+  /o/{orgId}/permission-requests/{requestId}/approve:
+    post:
+      tags:
+        - Permission Requests
+      summary: Approve a permission request
+      operationId: approveRequest
+      description: Approve an access request by request ID.
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization identifier
+          required: true
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          description: Unique identifier for the permission request
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - expirationLength
+              properties:
+                expirationLength:
+                  type: string
+                  description: Duration for which access should be granted (e.g. "2h", "30m")
+      responses:
+        '200':
+          description: Request approved
+        '400':
+          description: Invalid or expired request
+        '401':
+          description: Unauthorized
+  /o/{orgId}/permission-requests/{requestId}/deny:
+    post:
+      tags:
+        - Permission Requests
+      summary: Deny a permission request
+      operationId: denyRequest
+      description: Deny an access request by request ID.
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization identifier
+          required: true
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          description: Unique identifier for the permission request
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Request denied
+        '400':
+          description: Invalid or expired request
+        '401':
+          description: Unauthorized
+  /o/{orgId}/permission-requests/{requestId}/revoke:
+    post:
+      tags:
+        - Permission Requests
+      summary: Revoke a granted permission
+      operationId: revokeRequest
+      description: Revoke access previously granted by request ID.
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization identifier
+          required: true
+          schema:
+            type: string
+        - name: requestId
+          in: path
+          description: Unique identifier for the permission request
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Access revoked
+        '400':
+          description: Invalid or expired request
+        '401':
+          description: Unauthorized
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

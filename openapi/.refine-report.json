@@ -1,0 +1,16 @@
+{
+  "provider": "p0-security",
+  "sources": [
+    "p0-security-command-api-openapi.yml",
+    "p0-security-permission-requests-api-openapi.yml"
+  ],
+  "outputs": [
+    "p0-security-command-api-openapi.yml",
+    "p0-security-permission-requests-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

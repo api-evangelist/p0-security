@@ -1,0 +1,8 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/p0-security-jit-openapi.yml
+skills:
+- file: p0-security-request-and-approve-access.md
+  name: Request and approve just-in-time access with P0
+  api: openapi/p0-security-jit-openapi.yml
+  operations: [submitCommand, approveRequest, denyRequest, revokeRequest]

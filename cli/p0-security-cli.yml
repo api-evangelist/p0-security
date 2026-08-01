@@ -1,0 +1,65 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/p0-security/p0cli (README) + https://docs.p0.dev/getting-started/getting-started-with-the-p0-cli
+name: P0 CLI
+binary: p0
+official: true
+description: >-
+  The official P0 command-line interface. Integrates P0 just-in-time access into
+  developer workflows: request access to cloud resources, assume AWS roles, and
+  open SSH/RDP/SCP sessions that automatically request, wait for approval, and
+  provision access before executing.
+prerequisites:
+- Node.js v22+
+- npm
+- AWS CLI + Session Manager plugin (for AWS role assumption / SSH)
+install:
+- method: npm
+  command: npm install -g @p0security/cli
+- method: standalone
+  command: Download from https://github.com/p0-security/p0cli/releases
+  platforms: [macOS, Windows, Debian/Linux]
+authentication:
+  command: p0 login <P0_ORGANIZATION_ID>
+  flow: >-
+    Browser-based login with your auth issuer; token is exchanged with Firebase
+    for an API token by default. Set ssoPassthrough=true in the org discover doc
+    to use the issuer token directly.
+commands:
+- name: allow
+  summary: Create standing access for a resource
+- name: aws
+  summary: Execute AWS commands (e.g. `p0 aws role ls`, `p0 aws role assume <ROLE>`)
+- name: grant
+  summary: Grant access to another identity
+- name: kubeconfig
+  summary: Configure kubectl for a Kubernetes cluster
+- name: login
+  summary: Log in to P0 using a web browser
+- name: logout
+  summary: Log out and clear all authentication data
+- name: ls
+  summary: List request-command arguments (mirrors `request`; supports `--like` fuzzy match)
+- name: rdp
+  summary: Connect to a Windows virtual machine via RDP
+- name: request
+  summary: Manually request permissions on a resource
+  subcommands:
+  - {name: aws, summary: Amazon Web Services}
+  - {name: azure-ad, summary: Entra ID}
+  - {name: gcloud, summary: Google Cloud (resource / role / permission)}
+  - {name: okta, summary: Okta}
+  - {name: ssh, summary: Secure Shell (SSH) session}
+  - {name: workspace, summary: Google Workspace}
+- name: scp
+  summary: SCP between local and remote hosts
+- name: ssh
+  summary: SSH into a virtual machine (requests + provisions access if needed)
+global_options:
+- {flag: --help, description: Show help}
+- {flag: --reason, description: Reason access is needed}
+- {flag: "-w, --wait", description: Block until the request is completed}
+key_flows:
+- Request a role then assume it: p0 request aws role <ROLE> ; $(p0 aws role assume <ROLE>)
+- Single-command SSH with JIT: p0 ssh <INSTANCE_NAME>
+- Discover available roles: p0 ls gcloud role names --like bigquery

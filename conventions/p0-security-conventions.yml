@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: derived
+source: >-
+  openapi/p0-security-jit-openapi.yml + docs.p0.dev + authentication/ + errors/
+authentication:
+  style: http-bearer
+  detail: Bearer (JWT) token in the Authorization header on every endpoint.
+  ref: authentication/p0-security-authentication.yml
+resource_scoping:
+  style: organization-path
+  detail: >-
+    All endpoints are nested under /o/{orgId}; requests operate within a single
+    P0 organization identified by orgId in the path.
+media_type: application/json
+request_id:
+  supported: true
+  detail: >-
+    submitCommand returns an `id` (Request ID) in the response body that
+    identifies the created access request for downstream approve/deny/revoke.
+idempotency:
+  supported: false
+  detail: No idempotency-key header or parameter is documented for the JIT API.
+pagination:
+  supported: false
+  detail: No list endpoints with pagination are documented in the public JIT API.
+error_envelope:
+  style: http-status
+  detail: Documented errors are plain HTTP 400/401 status codes.
+  ref: errors/p0-security-problem-types.yml
+versioning:
+  ref: lifecycle/p0-security-lifecycle.yml
+rate_limit_signaling:
+  documented: false

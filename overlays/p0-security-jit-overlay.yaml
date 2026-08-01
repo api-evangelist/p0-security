@@ -1,0 +1,26 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for P0 Just-in-Time Access API
+  version: 1.0.0
+extends: openapi/p0-security-jit-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: true
+    x-apievangelist-provider: p0-security
+    x-api-category: Privileged Access Management
+- target: $.info
+  update:
+    x-agentic-access-profile: agentic-access/p0-security-agentic-access.yml
+- target: $.paths['/o/{orgId}/command'].post
+  update:
+    x-consequence: write
+    x-note: >-
+      Submits an access command; treat as an acting/write operation when exposed
+      to agents. See agentic-access profile.
+- target: $.paths['/o/{orgId}/permission-requests/{requestId}/approve'].post
+  update:
+    x-consequence: safety-critical
+    x-note: >-
+      Grants privileged access; the agentic-access profile classifies this as
+      safety-critical (human-in-the-loop recommended).

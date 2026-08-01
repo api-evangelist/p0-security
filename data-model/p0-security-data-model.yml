@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/p0-security-jit-openapi.yml
+note: >-
+  Derived from the JIT API path structure and request/response schemas. The
+  public API exposes a small surface; entities are inferred from path segments
+  (/o/{orgId}/permission-requests/{requestId}) and payload fields.
+entities:
+- name: Organization
+  id_field: orgId
+  path: /o/{orgId}
+  description: A P0 organization; the tenant boundary for all operations.
+- name: Command
+  description: >-
+    An imperative submitted to P0 (scriptName + argv) that triggers an access
+    workflow; may create or reference a PermissionRequest.
+  fields: [scriptName, argv, id, ok, isPreexisting, isPersistent]
+- name: PermissionRequest
+  id_field: requestId
+  path: /o/{orgId}/permission-requests/{requestId}
+  description: >-
+    A just-in-time access request that can be approved (with expirationLength),
+    denied, or revoked.
+  fields: [requestId, expirationLength]
+relationships:
+- from: Command
+  to: Organization
+  kind: belongs_to
+  via: orgId
+- from: PermissionRequest
+  to: Organization
+  kind: belongs_to
+  via: orgId
+- from: Command
+  to: PermissionRequest
+  kind: has_one
+  via: id
+  note: submitCommand returns the resulting request id.
