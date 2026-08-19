@@ -13,17 +13,14 @@ server:
   - method: terraform
     module: https://github.com/p0-security/terraform-kubernetes-p0-oauthed-mcp
     description: Terraform module to deploy the P0 OAuthed MCP gateway.
-description: >-
-  The P0 MCP Gateway is a self-hosted runtime enforcement layer for agentic
-  authorization. It sits in the data path between AI agents (MCP clients) and
-  upstream MCP servers: it proxies MCP tool calls, verifies the identity token
-  binding user + agent on every call, evaluates least-privilege policy, launches
-  isolated per-session containers with short-lived just-in-time credentials for
-  upstream servers that need them, and ships audit activity to a SIEM. It syncs
-  MCP server definitions and tool catalogs from, and drives the
-  request/approval/grant/revoke lifecycle through, the P0 Controller (SaaS). A
-  companion self-hosted P0 OAuth server federates with the customer IdP (Okta,
-  Entra ID, Google) and brokers downstream credentials.
+description: 'The P0 MCP Gateway is a self-hosted runtime enforcement layer for agentic authorization.
+  It sits in the data path between AI agents (MCP clients) and upstream MCP servers: it proxies MCP tool
+  calls, verifies the identity token binding user + agent on every call, evaluates least-privilege policy,
+  launches isolated per-session containers with short-lived just-in-time credentials for upstream servers
+  that need them, and ships audit activity to a SIEM. It syncs MCP server definitions and tool catalogs
+  from, and drives the request/approval/grant/revoke lifecycle through, the P0 Controller (SaaS). A companion
+  self-hosted P0 OAuth server federates with the customer IdP (Okta, Entra ID, Google) and brokers downstream
+  credentials.'
 components:
 - name: P0 MCP Gateway
   hosting: self-hosted
@@ -34,8 +31,11 @@ components:
 - name: P0 Controller
   hosting: saas
   role: Policy sync, approvals, and access provisioning lifecycle.
-notes: >-
-  This is a policy-enforcing MCP gateway/proxy that governs access to a
-  customer's own upstream MCP servers, not a hosted MCP server exposing P0's own
-  REST API as tools. No single public remote MCP endpoint URL is published; it
-  runs inside the customer's environment.
+notes: This is a policy-enforcing MCP gateway/proxy that governs access to a customer's own upstream MCP
+  servers, not a hosted MCP server exposing P0's own REST API as tools. No single public remote MCP endpoint
+  URL is published; it runs inside the customer's environment.
+deployment:
+  mode: remote
+  verified: searched
+  checked: '2026-08-12'
+  source: catalog MCP census

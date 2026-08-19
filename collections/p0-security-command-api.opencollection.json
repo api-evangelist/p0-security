@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "P0 Just-in-Time Access Command API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Command",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit a command to P0",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.p0.app/o/:orgId/command",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submits a command to P0. This endpoint allows automation of access requests or other operations.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

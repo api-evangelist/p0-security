@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "P0 Just-in-Time Access Command Permission Requests API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Permission Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Approve a permission request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.p0.app/o/:orgId/permission-requests/:requestId/approve",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the permission request"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approve an access request by request ID."
+        },
+        {
+          "info": {
+            "name": "Deny a permission request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.p0.app/o/:orgId/permission-requests/:requestId/deny",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the permission request"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deny an access request by request ID."
+        },
+        {
+          "info": {
+            "name": "Revoke a granted permission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.p0.app/o/:orgId/permission-requests/:requestId/revoke",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the permission request"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Revoke access previously granted by request ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
