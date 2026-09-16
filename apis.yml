@@ -1,20 +1,15 @@
 aid: p0-security
 name: P0 Security
-description: >-
-  P0 Security is a cloud-native Privileged Access Management (PAM) platform that
-  governs runtime authorization for human users, machine/service accounts, and
-  AI agents across hybrid and multi-cloud environments. Its AuthZ Control Plane
-  enforces just-in-time (JIT), least-privilege access to AWS, Google Cloud,
-  Azure, Oracle Cloud, Kubernetes, databases, SSH hosts, Okta, and Google
-  Workspace — provisioning short-lived credentials on request, routing approvals
-  through Slack, Microsoft Teams, the web app, or the CLI, and automatically
-  revoking access when it expires. P0 also provides an access inventory and
-  identity graph, posture scanning for over-privileged and stale access,
-  service-account key rotation, and an agentic authorization control plane with
-  a self-hosted MCP Gateway that enforces least-privilege policy on every MCP
-  tool call. Developers integrate P0 through the official p0 CLI, a Terraform
-  provider, and a bearer-authenticated Just-in-Time Access API (Command,
-  Permission Request, and Access Policies).
+description: P0 Security is a cloud-native Privileged Access Management (PAM) platform that governs runtime
+  authorization for human users, machine/service accounts, and AI agents across hybrid and multi-cloud
+  environments. Its AuthZ Control Plane enforces just-in-time (JIT), least-privilege access to AWS, Google
+  Cloud, Azure, Oracle Cloud, Kubernetes, databases, SSH hosts, Okta, and Google Workspace — provisioning
+  short-lived credentials on request, routing approvals through Slack, Microsoft Teams, the web app, or
+  the CLI, and automatically revoking access when it expires. P0 also provides an access inventory and
+  identity graph, posture scanning for over-privileged and stale access, service-account key rotation,
+  and an agentic authorization control plane with a self-hosted MCP Gateway that enforces least-privilege
+  policy on every MCP tool call. Developers integrate P0 through the official p0 CLI, a Terraform provider,
+  and a bearer-authenticated Just-in-Time Access API (Command, Permission Request, and Access Policies).
 url: https://raw.githubusercontent.com/api-evangelist/p0-security/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -49,7 +44,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-09-16'
 image: https://p0.dev/p0.jpg
 tags:
 - Company
@@ -108,6 +103,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Website
+  url: https://p0.dev
 - type: DomainSecurity
   url: security/p0-security-domain-security.yml
 - type: AgenticAccess
