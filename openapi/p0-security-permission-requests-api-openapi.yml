@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: P0 Just-in-Time Access Command Permission Requests API
+  title: P0 Just-in-Time Access Permission Requests API
   version: 1.0.0
   description: P0 Security's Just-In-Time (JIT) access API surface, consolidated from P0's published Command API and Permission Request API. These endpoints let external systems, bots, CI/CD pipelines, and security workflows programmatically submit access commands and approve, deny, or revoke permission requests within a P0 organization. All endpoints are protected with bearer (JWT) tokens.
   contact:

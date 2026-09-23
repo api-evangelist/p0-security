@@ -1,4 +1,4 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
   title: P0 Just-in-Time Access Command API
   version: 1.0.0
@@ -21,9 +21,7 @@ paths:
       - Command
       summary: Submit a command to P0
       operationId: submitCommand
-      description: 'Submits a command to P0. This endpoint allows automation of access requests or other operations.
-
-        '
+      description: Submits a command to P0. This endpoint allows automation of access requests or other operations.
       parameters:
       - name: orgId
         in: path
