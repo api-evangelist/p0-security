@@ -103,6 +103,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/p0-security-capability-edges.yml
+  name: P0 Security Business Capability Map
 - type: Website
   url: https://p0.dev
 - type: DomainSecurity

@@ -1,0 +1,36 @@
+slug: p0-security
+provider: P0 Security
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Permission Requests
+  spec_file: p0-security-permission-requests-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: POST /o/{orgId}/permission-requests/{requestId}/approve  approveRequest  Approve a permission
+    request
+  reason: Approve, deny and revoke operations on privileged access requests are plainly identity and access
+    management (JIT least-privilege authorisation), not a business approval workflow.
+- tag: Command
+  spec_file: p0-security-command-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: These endpoints let external systems, bots, CI/CD pipelines, and security workflows programmatically
+    submit access commands
+  reason: Generic 'submitCommand' endpoint of a Privileged Access Management platform whose commands grant
+    just-in-time access, so it realises identity and access management. The opaque command payload lowers
+    confidence slightly.
