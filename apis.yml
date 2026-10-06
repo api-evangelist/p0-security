@@ -44,7 +44,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-09-16'
+modified: '2026-10-06'
 image: https://p0.dev/p0.jpg
 tags:
 - Company
@@ -103,6 +103,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://p0.dev/feed/
+  type: BlogRSS
 - type: CapabilityMap
   url: capabilities/p0-security-capability-edges.yml
   name: P0 Security Business Capability Map
